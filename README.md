@@ -1,6 +1,9 @@
 # Project Title
 
-NeuraTalk
+NeuraTalk – AI Powered Thread-Based Chat Application
+
+A full-stack conversational AI application with persistent thread-based chat history built using the MERN stack and OpenAI API.
+
 
 ## Overview
 
@@ -59,6 +62,17 @@ So both services should run locally at:
 - Frontend: `http://localhost:5173` (default Vite)
 - Backend: `http://localhost:9090`
 
+## System Design Overview
+
+The high-level request lifecycle of the application is:
+
+- Frontend sends user message to backend.
+- Backend stores message in MongoDB.
+- Backend calls OpenAI API for AI response.
+- AI response is saved in the same thread.
+- Updated thread data is returned to frontend.
+
+
 ## Installation & Setup
 
 ### 1) Clone the repository
@@ -91,7 +105,7 @@ OPENAI_API_KEY=your_openai_api_key
 MONGODB_URI=your_mongodb_connection_string
 ```
 
-## API Endpoints (if backend project)
+## API Endpoints 
 
 Base URL: `http://localhost:9090/api`
 
@@ -137,13 +151,11 @@ npm run dev
 
 Then open the local URL shown by Vite (usually `http://localhost:5173`).
 
-## Screenshots (if frontend project)
 
-Add UI screenshots here after running the app.
+## Deployment 
 
-## Deployment (if hosted)
-
-Not deployed yet.
+Currently running in local development environment.
+Deployment planned using Vercel (frontend) and Render (backend).
 
 Suggested deployment approach:
 - Frontend: Vercel / Netlify
